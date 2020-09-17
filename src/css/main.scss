@@ -119,7 +119,7 @@
 
 .content--type-article .content__meta-container {
     @include mq(leftCol) {
-        margin-top: -68px;
+        margin-top: -28px;
     }
 }
 
@@ -143,8 +143,8 @@ figure.element.element--showcase {
 
 
 
-// .u-responsive-ratio {
-//     @include mq(leftCol) {
-//     display: none;
-//     }
-// }
+.u-responsive-ratio {
+    @include mq(leftCol) {
+    display: none;
+    }
+}
