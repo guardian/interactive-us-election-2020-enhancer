@@ -1,6 +1,7 @@
 @import "mq";
 @import "fonts";
 @import "palette";
+@import "remove-dark-mode";
 
 // Uncomment for embeds
 //@import "embed";
@@ -135,9 +136,11 @@ figure.element.element--showcase {
 }
 @include mq(leftCol) {
     width: 950px;
+    margin-left: -170px;
 }
 @include mq(wide) {
     width: 1030px;
+    margin-left: -240px;
 }
 }
 
@@ -147,4 +150,65 @@ figure.element.element--showcase {
     @include mq(leftCol) {
     display: none;
     }
+}
+
+.ios,
+.android {
+  .headline {
+    @include fs-headline(5);
+    font-weight: 700;
+  
+    @include mq(mobileMedium) {
+      @include fs-headline(6);
+      font-weight: 700;
+    }
+    &::before {
+    content: "";
+    display: block;
+    background-image: url("<%= path %>/assets/header-image.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left 0px bottom 0px;
+    height: 58vw;
+    margin-left: 0px;
+    @include mq(tablet) {
+      border-top: 0;
+      margin-left: -20px;
+     
+    }
+
+    @include mq(desktop) {
+      width: 940px;
+      height: 372px;
+    }
+    @include mq(leftCol) {
+      width: 950px;
+      padding-bottom: 10px;
+      margin-left: -10px;
+      // padding-top: 10px;
+      background-position: left 0px bottom 0px;
+    }
+    @include mq(wide) {
+      width: 1030px;
+    }
+  }
+  }
+  .standfirst {
+    @include fs-headline(1);
+    font-weight: 200;
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+  .byline {
+      a {
+      @include fs-header(1);
+      font-weight: 700;
+    }
+  }
+  h2 {
+    @include fs-header(2);
+    font-weight: 700;
+    margin-top: 36px;
+    margin-bottom: 6px;
+  }
 }
